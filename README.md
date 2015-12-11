@@ -1,5 +1,25 @@
-# team-a1
-Survey Gorilla group project
+Team A1: Survey Gorilla Group Project
+Jeff George, Arc Petretta, Jack Huang, Eunice Do 
+
+
+Description of your MVP: 
+A user (creator) will be able to log in and create a survey, with a title, and as many questions and answer choices as they want. 
+A user (taker) will be able to log in and take a survey. 
+At the end of the survey, a thank you page will be displayed.
+A user (creator) will be able to see an analysis of their survey results.
+Stretch: Any user can see the surveys they created, or the surveys they took.
+
+
+A link to your team Trello board: 
+https://trello.com/b/wFpvK8H5/welcome-board 
+
+
+A link to your wireframes: 
+![Survey Gorilla Wireframe] (wireframe.jpg)
+
+A brief description of your team dynamic and git workflow:
+Pair programming in agile sprints on a new repo. One pair code reviews the other prior to merges.
+
 
 ## Survey Gorilla Schema
 ![Survey Schema] (survey_schema.png)
