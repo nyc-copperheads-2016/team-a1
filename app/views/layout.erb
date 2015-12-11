@@ -18,8 +18,59 @@
   <title></title>
 </head>
 <body>
-<div id="content">
-  <%= yield %>
-</div>
+  <header>
+
+    <nav>
+      <ul class="masthead--ul">
+
+          <% if logged_in? %>
+            <li class="masthead--li">
+              <span class='welcome'>Welcome, <a href="/users/<%= current_user.id %>"><%= current_user.username %>! </a></span>
+              <form class="masthead--li" method='post' action='/sessions'>
+                <input type='hidden' name='_method' value='DELETE' />
+                <input class="masthead--li  log-out-btn  link" id='logout' type='submit' value='Logout' />
+              </form>
+            </li>
+          <% else %>
+            <li class="masthead--li">
+              <a href="/users/new">New User</a>
+            </li>
+            <li class="masthead--li">
+              <a href="/sessions/new">Log in</a>
+            </li>
+          <% end %>
+
+          <li class="masthead--li">
+            <a href="/">Home</a>
+          </li>
+        </ul>
+    </nav>
+
+    <h1>Team A1 Survey Machine</h1>
+    <p>The best sauce!</p>
+  </header>
+
+  <main>
+
+    <% if defined?(errors) %>
+      <div class='errors'>
+        <ul>
+          <% errors.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>Created by Eunice Do, Jeff George, Jack Huang, and Arcangelo Petretta</p>
+    <p><a href="http://devbootcamp.com/" target="_blank">Dev Bootcamp NYC</a> &bull; Copperheads 2016</p>
+  </footer>
 </body>
 </html>
