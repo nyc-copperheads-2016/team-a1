@@ -10,11 +10,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of   :password, confirm: :password_confirmation
 
   def password_confirmation_matches
-    if password_confirmation == self.password
-      return true
-    else
+    unless password_confirmation == self.password
       errors.add(:password_confirmation, "must match password")
-      return false
     end
   end
 
