@@ -1,5 +1,5 @@
-user01 = User.create( username: "Albert", password_hash: "Albert")
-user02 = User.create( username: "Bertha", password_hash: "Bertha")
+user01 = User.create( username: "Albert", password: "Albert")
+user02 = User.create( username: "Bertha", password: "Bertha")
 
 survey01 = Survey.create( title: "Test Survey 01", description: "A test survey.", user_id: 1 )
 
