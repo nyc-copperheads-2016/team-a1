@@ -1,3 +1,4 @@
 class Selection < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to    :responses
+  belongs_to    :choices
 end
