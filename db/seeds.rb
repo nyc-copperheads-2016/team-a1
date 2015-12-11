@@ -1,7 +1,7 @@
 user01 = User.create( username: "Albert", password: "Albert")
 user02 = User.create( username: "Bertha", password: "Bertha")
 
-survey01 = Survey.create( title: "Test Survey 01", description: "A test survey.", user_id: 1 )
+survey01 = Survey.create( title: "Test Survey 01", description: "A test survey.", user_id: user01.id )
 
 survey01.questions.create(text: "What is your favorite color?")
 survey01.questions.create( text: "What is your favorite number?")
