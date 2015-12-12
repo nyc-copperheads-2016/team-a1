@@ -12,3 +12,17 @@ get '/surveys/:id/end' do
 
   erb :'survey/end'
 end
+
+
+post '/surveys' do
+  @survey = Survey.new(params[:survey])
+  if @survey.save
+    if request.xhr?
+      erb :'question/new', layout: false
+    else
+      redirect '/questions/new'
+    end
+  else
+    redirect '/?errors=unable_to_create_survey'
+  end
+end

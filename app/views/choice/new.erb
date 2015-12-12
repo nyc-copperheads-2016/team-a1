@@ -1,0 +1,12 @@
+<% if @error %>
+  <%= @error %>
+<% end %>
+<form class='choice-form' method="post" action='/choices'>
+  <label for="Choice">Choice: </label>
+  <input type="text" name="choices[text]">
+
+  <input type="hidden" name="choices[question_id]" value="<%= @question.id %>">
+  <input type="submit" value="Enter choice">
+</form>
+
+<a href="/questions/new">Add another question</a>
