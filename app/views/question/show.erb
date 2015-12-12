@@ -1,9 +1,10 @@
+
 <h1><%= @question.text %></h1>
 
   <div class='question-container'>
     <form action='/selections' method='post'>
     <% @question.choices.each do |choice| %>
-      <input type='hidden'name='selection[response_id]' value="<%= %>"
+      <input type='hidden'name='selection[response_id]' value="<%= @current_response.id %>">
       <input type='radio' name='selection[choice_id]' value="<%= choice.id %>"><%= choice.text %>
     <% end %>
     <br>
