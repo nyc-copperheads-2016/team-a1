@@ -1,0 +1,17 @@
+<% if logged_in? %>
+<div>
+  <% @survey.each do |survey| %>
+  <div id="survey-<%=survey.id%>">
+    <h2>
+      <form action='/responses' method='post'>
+        <input type='hidden' name='response[user_id]' value='<%= current_user.id %>'>
+        <input type='hidden' name='response[survey_id]' value='<%= survey.id %>'>
+        <input type='submit' value='<%= survey.title %>'>
+      </form>
+      <a href="/surveys/<%= survey.id %>/questions/<%= survey.questions.first.id %>"><%= survey.title %></a>
+    </h2>
+    <p><%= survey.description %></p>
+  </div>
+  <% end %>
+</div>
+<% end %>
