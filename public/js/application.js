@@ -1,7 +1,42 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $("#questions").on('submit', '.survey-form', function(event){
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    event.preventDefault();
+
+    $.ajax({
+      method: event.target.method,
+      url: event.target.action,
+      data: $(event.target).serialize()
+    }).done(function(response){
+      $("#questions").append(response);
+    }).fail(function(error){
+      $("#questions").append(error);
+    });
+  });
+
+  $("#questions").on('submit', '.question-form', function(event) {
+    event.preventDefault();
+    $.ajax({
+      method: event.target.method,
+      url: event.target.action,
+      data: $(event.target).serialize()
+    }).done(function(response){
+      $("#questions").append(response)
+    }).fail(function(response){
+      $("#questions").append(response)
+    });
+  });
+
+  $("#questions").on('submit', ".choice-form", function(event){
+    event.preventDefault();
+    $.ajax({
+      method: event.target.method,
+      url: event.target.action,
+      data: $(event.target).serialize()
+    }).done(function(response){
+      $("#questions").append(response);
+    }).fail(function(error){
+      $("#questions").append(error);
+    });
+  });
 });
