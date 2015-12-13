@@ -7,9 +7,7 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
+  <link href='https://fonts.googleapis.com/css?family=Righteous|Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -18,20 +16,28 @@
   <title></title>
 </head>
 <body>
-  <header>
+  <header class="masthead">
 
-    <nav>
+    <nav class="masthead--nav">
       <ul class="masthead--ul">
 
           <% if logged_in? %>
             <li class="masthead--li">
-              <span class='welcome'>Welcome, <a href="/users/<%= current_user.id %>"><%= current_user.username %>! </a></span>
-              <form class="masthead--li" method='post' action='/sessions'>
+              <span>
+                Welcome,
+                <a href="/users/<%= current_user.id %>">
+                  <%= current_user.username %>!
+                </a>
+              </span>
+            </li>
+            <li class="masthead--li">
+              <form method='post' action='/sessions'>
                 <input type='hidden' name='_method' value='DELETE' />
                 <input class="masthead--li  log-out-btn  link" id='logout' type='submit' value='Logout' />
               </form>
-              <a href='/surveys/new'>Create a Survey</a>
             </li>
+
+
           <% else %>
             <li class="masthead--li">
               <a href="/users/new">New User</a>
@@ -45,10 +51,17 @@
             <a href="/">Home</a>
           </li>
         </ul>
+
+        <% if logged_in? %>
+          <a class="masthead--create" href='/surveys/new'>Create a Survey</a>
+        <% end %>
+
     </nav>
 
-    <h1>Team A1 Survey Machine</h1>
-    <p>The best sauce!</p>
+    <h1 class="masthead--logo">
+      <a href='/'>Team A1 Survey Machine</a>
+    </h1>
+    <p class="masthead--tagline">The best sauce!</p>
   </header>
 
   <main>
@@ -63,7 +76,7 @@
       </div>
     <% end %>
 
-    <div id="content">
+    <div id="content" class="content">
       <%= yield %>
     </div>
 
