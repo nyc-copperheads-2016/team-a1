@@ -9,17 +9,14 @@ end
 
 get '/surveys/:id/end' do
   @survey = Survey.find_by(id: params[:id])
-
   erb :'survey/end'
 end
-
 
 post '/surveys' do
   @survey = Survey.new(params[:survey])
   if @survey.save
     if request.xhr?
-      binding.pry
-      erb :'question/new', layout: false
+      erb :'question/_new_partial', layout: false
     else
       redirect '/questions/new'
     end
@@ -27,3 +24,4 @@ post '/surveys' do
     redirect '/?errors=unable_to_create_survey'
   end
 end
+

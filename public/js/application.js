@@ -1,41 +1,61 @@
 $(document).ready(function() {
-  $("#questions").on('submit', '.survey-form', function(event){
-    debugger
+  //renders question form
+  $("#survey-info").on('submit', '.survey-form', function(event){
     event.preventDefault();
     $.ajax({
       method: event.target.method,
       url: event.target.action,
       data: $(event.target).serialize()
     }).done(function(response){
-      $("#questions").append(response);
+      $("#survey-info").html(response);
     }).fail(function(error){
-      $("#questions").append(error);
+      console.log("Error " + response)
     });
   });
 
-  $("#questions").on('submit', '.question-form', function(event) {
+
+  //renders partial choice form
+  $("#survey-info").on('submit', '.question-form', function(event) {
+
     event.preventDefault();
     $.ajax({
       method: event.target.method,
       url: event.target.action,
       data: $(event.target).serialize()
     }).done(function(response){
-      $("#questions").append(response)
+      $(".question-submit-button").hide();
+      // debugger
+      $('.choice').show();
+      $(".choice").html(response);
+      // $(".question-submit-button").hide();
     }).fail(function(response){
-      $("#questions").append(response)
+      console.log("Error " + response)
     });
   });
-
-  $("#questions").on('submit', ".choice-form", function(event){
+  //renders choice form
+  $(".choice").on('submit', ".choice-form", function(event){
     event.preventDefault();
     $.ajax({
       method: event.target.method,
       url: event.target.action,
       data: $(event.target).serialize()
     }).done(function(response){
-      $("#questions").append(response);
+      $(".choice").append(response);
+      // $(".choice-submit-button").hide();
     }).fail(function(error){
-      $("#questions").append(error);
+      console.log("Error " + response)
+    });
+  });
+
+  $('.choice').on('click','.new-question', function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: event.target.href,
+    }).done(function(response){
+      $(".choice").hide()
+      $("#survey-info").append(response);
+    }).fail(function(response){
+      console.log("Error " + response);
     });
   });
 });
