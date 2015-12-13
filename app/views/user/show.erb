@@ -1,1 +1,6 @@
-show.erb
+<% if @surveys %>
+<h1> The surveys you created: </h1>
+  <% @surveys.each do |survey| %>
+    <h3><%= survey.title %></h3>
+  <% end %>
+<% end %>
