@@ -40,8 +40,9 @@ $(document).ready(function() {
       url: event.target.action,
       data: $(event.target).serialize()
     }).done(function(response){
+      $(".choice-submit-button").hide();
+      $(".new-question").hide();
       $(".choice").append(response);
-      // $(".choice-submit-button").hide();
     }).fail(function(error){
       console.log("Error " + response)
     });
@@ -52,7 +53,7 @@ $(document).ready(function() {
     $.ajax({
       url: event.target.href,
     }).done(function(response){
-      $(".choice").hide()
+      $(".choice").hide();
       $("#survey-info").append(response);
     }).fail(function(response){
       console.log("Error " + response);
