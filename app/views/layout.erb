@@ -18,9 +18,9 @@
   <title></title>
 </head>
 <body>
-  <header>
+  <header class="masthead">
 
-    <nav>
+    <nav class="masthead--nav">
       <ul class="masthead--ul">
 
           <% if logged_in? %>
@@ -45,13 +45,17 @@
             <a href="/">Home</a>
           </li>
         </ul>
+
+
     </nav>
 
-    <h1>Team A1 Survey Machine</h1>
-    <p>The best sauce!</p>
+    <h1 class="masthead--logo">
+      <a href='/'>Team A1 Survey Machine</a>
+    </h1>
+    <p class="masthead--tagline">The best sauce!</p>
   </header>
 
-  <main>
+  <main id="content">
 
     <% if defined?(errors) %>
       <div class='errors'>
@@ -63,7 +67,7 @@
       </div>
     <% end %>
 
-    <div id="content">
+    <div>
       <%= yield %>
     </div>
 
