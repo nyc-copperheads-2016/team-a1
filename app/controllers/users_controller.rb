@@ -11,4 +11,3 @@ post '/users' do
     erb :'/sessions/new', locals: { errors: user.errors.full_messages }
   end
 end
-
