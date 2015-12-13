@@ -10,7 +10,7 @@ post '/choices' do
   @question = Question.find_by(id: choice.question_id)
   if choice.save
     if request.xhr?
-      erb :'/choice/new', layout: false
+      erb :'/choice/_new_partial', layout: false
     else
       redirect '/choices/new'
     end

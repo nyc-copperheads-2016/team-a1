@@ -7,7 +7,11 @@ end
 
 get '/questions/new' do
   @survey = Survey.where(user_id: session[:user_id]).last
-  erb :'/question/new'
+  if request.xhr?
+    erb :'/question/_question_partial', layout: false
+  else
+    erb :'/question/new'
+  end
 end
 
 post '/questions' do
@@ -15,7 +19,7 @@ post '/questions' do
   @survey = Survey.where(user_id: session[:user_id]).last
   if @question.save
     if request.xhr?
-      erb :'/choice/new', layout: false
+      erb :'/choice/_new_partial', layout: false
     else
       redirect '/choices/new'
     end

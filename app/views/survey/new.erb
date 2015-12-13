@@ -1,5 +1,4 @@
-
-<div id='questions'>
+<div id='survey-info'>
   <form class='survey-form' method="post" action='/surveys'>
     <label for="title">Title: </label>
     <input type="text" name="survey[title]">
@@ -7,7 +6,15 @@
     <label for="description">Description: </label>
     <input type="text" name="survey[description]">
     <input type="hidden" name="survey[user_id]" value="<%= current_user.id %>">
-    <input type="submit" value="Create survey">
+    <input id ='survey-submit-button' type="submit" value="Create survey">
   </form>
-
 </div>
+
+<div class ="question">
+</div>
+
+
+<div class ="choice">
+</div>
+
+<a href="/users/<%= current_user.id %>">Done</a>
