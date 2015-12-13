@@ -1,6 +1,6 @@
 <% if @surveys %>
 <h1> The surveys you created: </h1>
   <% @surveys.each do |survey| %>
-    <h3><%= survey.title %></h3>
+    <a href='/surveys/<%= survey.id %>/statistics'><h3><%= survey.title %></h3></a>
   <% end %>
 <% end %>

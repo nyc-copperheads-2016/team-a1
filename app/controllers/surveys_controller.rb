@@ -25,3 +25,15 @@ post '/surveys' do
   end
 end
 
+get '/surveys/:id/statistics' do
+  @survey = Survey.find_by(id: params[:id])
+  @selection_id = []
+  @survey.questions.each do |question|
+    question.selections.each do |selection|
+      @selection_id << selection.choice_id
+      # binding.pry
+    end
+  end
+  erb :'/survey/statistics'
+end
+

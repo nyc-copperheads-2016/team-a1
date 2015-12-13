@@ -5,4 +5,5 @@ class Survey < ActiveRecord::Base
   has_many      :responses
 
   validates :title, length: {minimum: 5}
+
 end
