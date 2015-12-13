@@ -1,8 +1,7 @@
 $(document).ready(function() {
   $("#questions").on('submit', '.survey-form', function(event){
-
+    debugger
     event.preventDefault();
-
     $.ajax({
       method: event.target.method,
       url: event.target.action,

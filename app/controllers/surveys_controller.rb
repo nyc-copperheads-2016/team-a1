@@ -18,6 +18,7 @@ post '/surveys' do
   @survey = Survey.new(params[:survey])
   if @survey.save
     if request.xhr?
+      binding.pry
       erb :'question/new', layout: false
     else
       redirect '/questions/new'

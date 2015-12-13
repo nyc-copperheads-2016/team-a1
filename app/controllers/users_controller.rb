@@ -1,5 +1,6 @@
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
+  @surveys = @user.surveys
   erb :'user/show'
 end
 
