@@ -69,7 +69,7 @@ code {
 
 /**********************************\
 
-COLORS
+COLORS & FONTS
 
 Near Black  #2f3236
 Dark Gray   #a1a2a8
@@ -79,6 +79,9 @@ Light Gray  #f0f0f2
 Red         #6d2f37
 Light Red   #bc4f50
 Bright Red  #dc5f60
+
+font-family: 'Righteous', 'Open Sans, sans-serif;
+font-family: 'Open Sans', sans-serif;
 
 \**********************************/
 
@@ -94,6 +97,7 @@ html {
 }
 
 body {
+  /*width: 1000px;*/
   margin: 0;
   padding: 0 1rem;
   background-color: #c1c2ce;
@@ -107,10 +111,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 
-.wrapper {
-  width: 600px;
-  margin: 0 auto;
-}
 
 .table-format {
   text-align: center;
@@ -121,8 +121,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 7rem;
   padding: 1rem;
-    background-color: #2f3236;
-    color: #bc4f50;}
+  background-color: #2f3236;
+  color: #bc4f50;
+  position: relative;
+
+}
 
 .masthead--nav {
   float: right;
@@ -136,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline;
   padding: 0 0.5rem;
   font-size: 0.8rem;
-  border-left: 1px solid #d9e8f5;
+  border-left: 1px solid #c1c2ce;
 }
 
 .masthead--li:first-child {
@@ -157,47 +160,18 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-
-.masthead--logo {
-  font-size: 3rem;
-  padding-top: 0;
-  margin-top: 0;
-  line-height: 1;
-  font-family: 'Bangers', sans-serif;
-  letter-spacing: 0.05em;
+.masthead form {
+  display: inline;
 }
-
-.masthead--tagline {
-  font-size: 1.6rem;
-  padding-top: 0;
-  margin-top: 0;
-  line-height: 1;
-}
-
-/**********************************\
-
-COLORS
-
-Near Black  #2f3236
-Dark Gray   #a1a2a8
-Med Gray    #c1c2ce
-Light Gray  #f0f0f2
-
-Red         #6d2f37
-Light Red   #bc4f50
-Bright Red  #dc5f60
-
-\**********************************/
-
 
 .log-out-btn {
   overflow: visible;
   text-align: center;
+  font-weight: bold;
   width: auto;
   border: none;
   background-color: #2f3236;
 }
-
 
 .log-out-btn.link {
   font-size: 1em;
@@ -208,6 +182,37 @@ Bright Red  #dc5f60
   cursor: pointer;
   background-color: #2f3236;
 }
+
+.log-out-btn.link:hover,
+.log-out-btn.link:active {
+  color: #dc5f60;
+}
+
+
+.masthead--logo {
+  font-size: 3rem;
+  padding-top: 0;
+  margin-top: 0;
+  line-height: 1;
+  font-family: 'Righteous', 'Open Sans', sans-serif;
+}
+
+.masthead--tagline {
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  padding-top: 0;
+  margin-top: 0;
+  line-height: 1;
+}
+
+.masthead--create {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  float: right;
+}
+
 
 
 main {
@@ -220,13 +225,13 @@ main {
   width: 100%;
   margin: 0 auto;
   padding: 1rem;
-  background-color: #D9E8F5;
-  color: #304269;
+  background-color: #f0f0f2;
+  color: #a1a2a8;
 }
 
 .content h2 {
   font-size: 2.4rem;
-  font-family: 'Bangers', sans-serif;
+  font-family: 'Righteous', 'Open Sans', sans-serif;
   letter-spacing: 0.03em;
   margin-bottom: 1rem;
 }
@@ -262,6 +267,7 @@ main {
 .content input {
   display: block;
   width: 60%;
+  padding: 0.4rem 0.8rem;
   margin-left: 20%;
   margin-bottom: 0.5rem;
 }
@@ -269,10 +275,6 @@ main {
 .content .submit-btn {
   width: 20%;
   margin-left: 40%;
-}
-
-.content .deck {
-  text-align: center;
 }
 
 .content a:link,
