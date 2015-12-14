@@ -10,4 +10,8 @@ class Selection < ActiveRecord::Base
     self.response.selections.count < self.response.survey.questions.count
   end
 
+  def all_questions_asked?
+    self.response.selections.count == self.response.survey.questions.count
+  end
+
 end
