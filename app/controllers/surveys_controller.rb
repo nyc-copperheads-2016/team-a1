@@ -21,7 +21,7 @@ post '/surveys' do
       redirect '/questions/new'
     end
   else
-    erb :'/survey/new', locals: { errors: @survey.errors.full_messages }
+    erb :'/survey/new', layout: false, locals: { errors: @survey.errors.full_messages }
   end
 end
 
