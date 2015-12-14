@@ -1,9 +1,12 @@
-<h2>Survey Title: <%= @survey.title %></h2>
-<h3>Survey Description: <%= @survey.description %></h3>
+<h3><%= @survey.title %></h3>
+<p><%= @survey.description %></p>
 
 <form class="question-form" method="post" action='/questions'>
-  <label for="title">Question: </label>
-  <input type="text" name="question[text]">
+  <input class="input-field" type="text" name="question[text]" placeholder="Question text">
   <input type="hidden" name="question[survey_id]" value="<%= @survey.id %>">
-  <input class='question-submit-button' type="submit" value="Create question">
+  <input class='submit-btn question-submit-button' type="submit" value="Save question">
 </form>
+
+
+
+

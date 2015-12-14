@@ -1,11 +1,15 @@
 <% if @surveys %>
-  <h1> The surveys you created: </h1>
+  <h3>Surveys you created</h3>
     <% @surveys.each do |survey| %>
       <a href='/surveys/<%= survey.id %>/statistics'><h3><%= survey.title %></h3></a>
     <% end %>
 
-  <h1> Surveys you've participated in: </h1>
+  <h3>Surveys you've participated in</h3>
     <% current_user.responses.each do |response|%>
-      <a href='/surveys/<%=response.survey.id %>/statistics'><%= response.survey.title %></a><br>
+      <p>
+        <a href='/surveys/<%=response.survey.id %>/statistics'>
+          <%= response.survey.title %>
+        </a>
+      </p>
     <% end %>
 <% end %>

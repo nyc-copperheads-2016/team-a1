@@ -1,12 +1,17 @@
 <% if @error %>
   <%= @error %>
 <% end %>
-<form class='choice-form' method="post" action='/choices'>
-  <label for="Choice">Choice: </label>
-  <input type="text" name="choices[text]">
 
+<form class='choice-form' method="post" action='/choices'>
+  <input class="input-field" type="text" name="choices[text]" placeholder="Choice text">
   <input type="hidden" name="choices[question_id]" value="<%= @question.id %>">
-  <input type="submit" value="Enter choice">
+  <input class="submit-btn" type="submit" value="Save choice">
 </form>
 
-<a href="/questions/new">Add another question</a>
+<p>
+  <a href="/questions/new">Add another question</a>
+</p>
+
+<p>
+  <a href="/users/<%= current_user.id %>">Complete Survey</a>
+</p>

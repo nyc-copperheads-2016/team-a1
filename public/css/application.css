@@ -233,7 +233,8 @@ main {
   font-size: 2.4rem;
   font-family: 'Righteous', 'Open Sans', sans-serif;
   letter-spacing: 0.03em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 20%;
 }
 
 .content p {
@@ -248,6 +249,7 @@ main {
 
 .content h3 {
   text-align: center;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 
@@ -259,23 +261,33 @@ main {
   font-size: 1.4rem;
 }
 
-.content label {
-  margin-left: 20%;
-  margin-bottom: 0.25rem;
+.content form {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
+
 .content input {
-  display: block;
-  width: 60%;
   padding: 0.4rem 0.8rem;
   margin-left: 20%;
   margin-bottom: 0.5rem;
+  color: #2f3236;
 }
+
+.content .input-field {
+  float: left;
+  width: 60%;
+}
+
 
 .content .submit-btn {
   width: 20%;
+  margin-top: 1rem;
   margin-left: 40%;
+  background-color: #c1c2ce;
+  color: #2f3236;
 }
+
 
 .content a:link,
 .content a:visited {
@@ -292,26 +304,52 @@ main {
   text-decoration: none;
 }
 
-.content table {
-  width: 570px;
-  border: 1px solid #304269;
-  background-color: #91bed4;
-  margin-bottom: 1.5rem;
+.content .survey-question {
+  margin: 1rem 20%;
 }
 
-.table-col-1 {
-  width: 215px;
+.content .radio-label {
+  margin-bottom: 0.25rem;
+  padding-left: 1rem;
+  display: inline;
 }
 
-.table-col-2 {
-  width: 170px;
-  border-left: 1px solid #304269;
+.content .survey-btn {
+  display: block;
+  overflow: visible;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #8d3f47;
+  width: auto;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  background-color: #f0f0f2;
 }
 
-.table-row-data {
-  border-top: 1px solid #304269;
-  background-color: #eeeefb;
+.content .survey-btn:hover,
+.content .survey-btn:active {
+  color: #dc5f60;
 }
+
+.content .survey-desc {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+
+.survey-btn.link {
+  font-size: 1em;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: #304269;
+}
+
 
 
 
