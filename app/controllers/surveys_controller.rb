@@ -21,7 +21,7 @@ post '/surveys' do
       redirect '/questions/new'
     end
   else
-    redirect '/?errors=unable_to_create_survey'
+    erb :'/survey/new', layout: false, locals: { errors: @survey.errors.full_messages }
   end
 end
 
@@ -31,9 +31,7 @@ get '/surveys/:id/statistics' do
   @survey.questions.each do |question|
     question.selections.each do |selection|
       @selection_id << selection.choice_id
-      # binding.pry
     end
   end
   erb :'/survey/statistics'
 end
-

@@ -1,3 +1,13 @@
+<% if defined?(errors) %>
+  <div class='errors'>
+    <ul>
+      <% errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h3>Create a survey</h3>
 
 <div id='survey-info'>
@@ -12,12 +22,9 @@
 <div class ="question">
 </div>
 
-
 <div class ="choice">
 </div>
 
-<!--
 <p>
   <a href="/users/<%= current_user.id %>">Complete Survey</a>
 </p>
--->

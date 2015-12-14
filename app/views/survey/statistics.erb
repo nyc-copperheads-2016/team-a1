@@ -1,5 +1,4 @@
-
-  <html>
+<html>
 <% @survey.questions.each_with_index do |question, index| %>
     <head>
       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -44,7 +43,6 @@
       <!--Div that will hold the pie chart-->
         <div id="chart_div<%= index %>"></div>
 <% end %>
-      <br>
-    </body>
-  </html>
-
+    <br>
+  </body>
+</html>

@@ -40,7 +40,7 @@ $(document).ready(function() {
       url: event.target.action,
       data: $(event.target).serialize()
     }).done(function(response){
-      $(".choice-submit-button").hide();
+      $(".submit-btn").hide();
       $(".new-question").hide();
       $(".choice").append(response);
     }).fail(function(error){
