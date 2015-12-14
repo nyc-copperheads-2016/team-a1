@@ -1,6 +1,5 @@
 post '/responses' do
   response = Response.new(params[:response])
-  # binding.pry
   if response.save
     redirect "/surveys/#{response.survey_id}/questions/#{response.survey.questions.first.id}"
   else

@@ -31,9 +31,7 @@ get '/surveys/:id/statistics' do
   @survey.questions.each do |question|
     question.selections.each do |selection|
       @selection_id << selection.choice_id
-      # binding.pry
     end
   end
   erb :'/survey/statistics'
 end
-
