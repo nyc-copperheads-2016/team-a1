@@ -19,6 +19,6 @@ post '/users' do
     session[:user_id] = user.id
     redirect '/'
   else
-    redirect '/sessions/new?errors=incorrect_user_or_password'
+    erb :'/sessions/new', locals: {errors: user.errors.full_messages}
   end
 end
