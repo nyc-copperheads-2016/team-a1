@@ -1,12 +1,11 @@
+<h3>Create a survey</h3>
+
 <div id='survey-info'>
   <form class='survey-form' method="post" action='/surveys'>
-    <label for="title">Title: </label>
-    <input type="text" name="survey[title]">
-
-    <label for="description">Description: </label>
-    <input class="input-field" type="text" name="survey[description]">
+    <input class="input-field" type="text" name="survey[title]" placeholder="Survey title">
+    <input class="input-field" type="text" name="survey[description]" placeholder="Survey description">
     <input type="hidden" name="survey[user_id]" value="<%= current_user.id %>">
-    <input id ='survey-submit-button' type="submit" value="Create survey">
+    <input id='survey-submit-button' class="submit-btn" type="submit" value="Begin survey">
   </form>
 </div>
 
@@ -17,4 +16,8 @@
 <div class ="choice">
 </div>
 
-<a href="/users/<%= current_user.id %>">Done</a>
+<!--
+<p>
+  <a href="/users/<%= current_user.id %>">Complete Survey</a>
+</p>
+-->
