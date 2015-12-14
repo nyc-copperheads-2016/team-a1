@@ -5,7 +5,7 @@ post '/responses' do
     redirect "/surveys/#{response.survey_id}/questions/#{response.survey.questions.first.id}"
   else
     @survey = Survey.order(:created_at)
-    @errors =  "You can only take a survey once!"
+    @errors =  "You can only complete each survey once!"
     erb :'/survey/index'
   end
 end
